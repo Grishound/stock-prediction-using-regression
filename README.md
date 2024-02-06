@@ -28,7 +28,7 @@ data = yf.download(stock, start_date, end_date)
 Irrelevant columns, such as 'Adj Close', are dropped from the dataset. The features (X) are defined as all columns except 'Close', and the target variable (y) is set as 'Adj Close'.
 ```
 data = data.drop(columns=['Adj Close'])
-X = data.drop(['Close'], axis=1)
+X = data.drop(['Adj Close'], axis=1)
 y = data['Adj Close']
 ```
 ## Splitting Data into Training and Testing Sets:
@@ -51,7 +51,7 @@ print(f"The score for our model is: {score}")
 ## Predicting the Next Day's Closing Price:
 The script predicts the next day's closing price using the latest available data.
 ```
-latest_data = data.tail(1).drop(['Close'], axis=1)
+latest_data = data.tail(1).drop(['Adj Close'], axis=1)
 next_day_price = regression_model.predict(latest_data)[0]
 print(f"The predicted price for the next trading day is: {next_day_price}")
 ```
