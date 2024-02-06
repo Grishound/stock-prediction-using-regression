@@ -26,3 +26,6 @@ print(f"The score for our model is: {score}")
 latest_data = data.tail(1).drop(['Adj Close'], axis=1)
 next_day_price = regression_model.predict(latest_data)[0]
 print(f"The predicted price for the next trading day is: {next_day_price}")
+
+# The score for our model is: 0.9999317993520995
+# The predicted price for the next trading day is: 186.71246240759143
